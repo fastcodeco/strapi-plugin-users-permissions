@@ -5,7 +5,7 @@
  *
  * @description: A set of functions called "actions" for managing `Auth`.
  * 
- * Modificate by Fastcode
+ * Edited by Fastcode
  */
 
 
