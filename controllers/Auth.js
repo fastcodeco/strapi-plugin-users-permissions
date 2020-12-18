@@ -4,7 +4,10 @@
  * Auth.js controller
  *
  * @description: A set of functions called "actions" for managing `Auth`.
+ * 
+ * Modificate by Fastcode
  */
+
 
 /* eslint-disable no-useless-escape */
 const crypto = require('crypto');
