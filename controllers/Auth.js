@@ -270,8 +270,11 @@ module.exports = {
     // grantConfig[provider].callback =
     //   ctx.query && ctx.query.callback ? ctx.query.callback : grantConfig[provider].callback;
 
+    console.log(process);
+
     grantConfig[provider].custom_params = _.get(ctx, 'query');
     grantConfig[provider].callback = _.get(ctx, 'query.callback') || _.get(ctx, 'state.session.grant.dynamic.callback') || grantConfig[provider].callback;
+    grantConfig[provider].redirect_uri = `${process.env.APP_PROVIDER_REDIRECT || 'https://core.yuumi.co'}/connect/${provider}/callback`;
 
     return grant(grantConfig)(ctx, next);
   },
