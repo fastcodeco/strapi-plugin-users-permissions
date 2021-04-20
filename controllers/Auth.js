@@ -274,7 +274,8 @@ module.exports = {
 
     grantConfig[provider].custom_params = _.get(ctx, 'query');
     grantConfig[provider].callback = _.get(ctx, 'query.callback') || _.get(ctx, 'state.session.grant.dynamic.callback') || grantConfig[provider].callback;
-    grantConfig[provider].redirect_uri = `${process.env.APP_PROVIDER_REDIRECT || 'https://core.yuumi.co'}/connect/${provider}/callback`;
+    grantConfig[provider].redirect_uri =`${strapi.config.server.url}/connect/${provider}/callback`;
+    //grantConfig[provider].redirect_uri = `${process.env.APP_PROVIDER_REDIRECT || 'https://core.yuumi.co'}/connect/${provider}/callback`;
 
     return grant(grantConfig)(ctx, next);
   },
